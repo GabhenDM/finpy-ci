@@ -11,6 +11,11 @@ jobs:
       strategy:
         matrix:
           python-version: [3.8]
+      env:
+        API_KEY_DEV: ${{secrets.API_KEY}}
+        FLASK_APP: app.py
+        FLASK_ENV: development
+        API_URL: https://finnhub.io/api/v1/
       steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
