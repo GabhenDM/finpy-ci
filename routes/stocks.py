@@ -24,6 +24,7 @@ def show_stock_news(ticker):
 @app.route('/stocks/profile/<ticker>')
 def show_profile(ticker):
     stock_ticker = escape(ticker)
+    print(app.config["API_KEY"])
     string = '{}stock/profile2?symbol={}&token={}'.format(app.config["API_URL"],stock_ticker,app.config['API_KEY'])
     r = requests.get(string)
     if r.status_code == requests.codes.ok:
