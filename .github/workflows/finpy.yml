@@ -7,20 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-    create-envfile:
- 
-        runs-on: ubuntu-18.04
-     
-        steps:
-        - name: Make envfile
-          uses: SpicyPizza/create-envfile@v1
-          with:
-            FLASK_APP: app.py
-            FLASK_ENV: development
-            API_URL: https://finnhub.io/api/v1/
-            API_KEY_DEV: ${{ secrets.API_KEY }}
-            file_name: .env
-
     build:
     runs-on: ubuntu-latest
     strategy:
