@@ -13,11 +13,6 @@ on:
             matrix:
               python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
           steps:
-            env:
-                API_KEY_DEV: ${{secrets.API_KEY}}
-                FLASK_APP: app.py
-                FLASK_ENV: development
-                API_URL: https://finnhub.io/api/v1/
           - uses: actions/checkout@v2
           - name: Set up Python ${{ matrix.python-version }}
             uses: actions/setup-python@v2
