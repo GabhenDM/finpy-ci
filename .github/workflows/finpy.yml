@@ -8,8 +8,8 @@ on:
 
 jobs:
     create-envfile:
-        runs-on: ubuntu-18.04
-        steps:
+    runs-on: ubuntu-18.04
+    steps:
         - name: Make envfile
         - uses: SpicyPizza/create-envfile@v1
             with:
